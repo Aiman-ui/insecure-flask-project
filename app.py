@@ -1,3 +1,4 @@
+app.config['SECRET_KEY'] = 'badsecret123'
 #!/usr/bin/env python3
 
 from flask_bootstrap import Bootstrap5

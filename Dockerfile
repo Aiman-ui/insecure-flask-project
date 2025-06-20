@@ -1,4 +1,4 @@
-FROM python:3.10.8-slim-buster
+FROM python:3.9-slim-buster
 
 RUN apt-get clean \
     && apt-get -y update
@@ -15,3 +15,5 @@ COPY --chown=www-data:www-data . /srv/flask_app
 WORKDIR /srv/flask_app
 RUN pip install -r requirements.txt --src /usr/local/src
 CMD service nginx start; uwsgi --ini uwsgi.ini
+
+USER root
